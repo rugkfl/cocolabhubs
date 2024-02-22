@@ -13,7 +13,7 @@ ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk-amd64
 WORKDIR /app
 
 ARG BRANCH_NAME=data_engineers
-ARG DIR_NAME=cocolabhubs
+ARG DIR_NAME=cocolabhubs             # 변경대상 
 
 # Clone the Git repository. Here we dynamically specify the repository name using the variable defined earlier.
 RUN git clone -b ${BRANCH_NAME} https://github.com/gocolab/co_templates ${DIR_NAME}
@@ -25,5 +25,5 @@ WORKDIR /app/${DIR_NAME}
 # RUN pip install --no-cache-dir -r ./requirements.txt
 RUN pip install -r ./requirements.txt
 
-RUN rm -rf .git
+# RUN rm -rf .git
 
